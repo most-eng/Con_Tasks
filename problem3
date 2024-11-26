@@ -1,0 +1,25 @@
+import random
+def gess_game():
+    group_words=["apple","orange","banana","grape"]
+    correct_word=random.choice(group_words)
+    gess_word=''.join(random.sample(correct_word,len(correct_word)))
+    print("welcome to gess game")
+    print(f"\n try to gess this word :{gess_word} you have 5 attempts\n")
+    attempts=5
+    while attempts>0:
+        guess=input("Enter your gess :")
+        if guess=="":
+          print("Invalid Input!")
+          continue
+        if guess==correct_word:
+          print("Congrats!")
+          return
+        attempts=attempts-1
+        if attempts>0:
+           print(f"Try again you have {attempts} attempts now")
+        else:
+           print(f"you lose all your attempts the correct word is {correct_word}")
+
+gess_game()
+        
+    
