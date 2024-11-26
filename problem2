@@ -1,0 +1,27 @@
+print("Enter records in the format 'Book Title - Days Borrowed'")
+Books_info={}
+_sum=0
+while True:
+    info=input()
+    if info=="":
+        break
+    Unq_tit,NumDays=info.split(" - ")
+    NumDays=int(NumDays)
+    _sum+=NumDays
+    if Unq_tit in Books_info:
+       Books_info[Unq_tit]=Books_info[Unq_tit]+NumDays;
+    else:
+       Books_info[Unq_tit]=NumDays
+for key,value in Books_info.items():
+    if value==max(Books_info.values()):
+        Max_book=key;
+for key,value in Books_info.items():
+    if value==min(Books_info.values()):
+        Min_book=key;
+the_Titles=set(Books_info.keys())
+print("the most borrowed book based on the number of days is :",Max_book)
+print("the least borrowed book based on the number of days is :",Min_book)
+print(" the average number of days books were borrowed =",_sum/len(Books_info))
+print("the unique titles of all borrowed books :",the_Titles)
+h=sorted(Books_info.values(),reverse=True)
+print("the sorted :",h)
