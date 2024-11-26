@@ -1,0 +1,9 @@
+
+Steps=input("Enter the steps\n")
+the_List=list(map(int,Steps.split( )))
+print("the highest step is :", max(the_List))
+print("the lowest step is :", min(the_List))
+print("the average of steps =",sum(the_List)/len(the_List))
+print("the sorted list :",sorted(the_List,reverse=True))
+print(the_List)
+
